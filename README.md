@@ -105,7 +105,7 @@
 <br>
 <br>
 
-[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/HA-Bots/Auto-Filter-Bot&branch=main&name=Auto-Filter-Bot)
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/hashirbot/H4X-BOT&branch=main&name=Auto-Filter-Bot)
 </details>
 
 <details><summary>Deploy To Render</summary>
