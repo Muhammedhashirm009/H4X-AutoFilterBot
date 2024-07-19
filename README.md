@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/HA-Bots/Auto-Filter-Bot">
-    <img src="https://graph.org/file/a66dbf46acf369e26d48a.jpg" alt="Auto Filter Bot">
+    <img src="[https://graph.org/file/a66dbf46acf369e26d48a.jpg](https://graph.org/file/76ee90ae16375ad7e463e.jpg)" alt="Auto Filter Bot">
   </a>
 </p>
 <h1 align="center">
