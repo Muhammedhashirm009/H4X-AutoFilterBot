@@ -73,7 +73,7 @@ async def root_route_handler(request):
         <h1>Welcome User to the H4X Stream BOT @h4xmoviebot</h1>
         <p>Use the bot to stream and download the movie, this bot is created by @MR_H4X</p>
         <div class="buttons">
-            <button class="button" onclick="window.location.href='https://t.me/ARMH4X;">Telegram Channel</button>
+            <button class="button" onclick="window.location.href='https://t.me/ARMH4X';">Telegram Channel</button>
             <button class="button" onclick="window.location.href='https://github.com/muhammedhashirm009';">GitHub</button>
         </div>
     </body>
