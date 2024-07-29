@@ -87,28 +87,80 @@ footer {
     box-sizing: border-box;
 }
 
+/* YouTube theme styling */
 .plyr--full-ui input[type=range] {
-    color: var(--player-hover-color);
+    color: #ff0000;
 }
 
 .plyr__control--overlaid {
-    background: #1E1E1E;
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .plyr--video .plyr__control.plyr__tab-focus,
 .plyr--video .plyr__control:hover,
 .plyr--video .plyr__control[aria-expanded=true] {
-    background: #ffc107;
+    background: #ff0000;
 }
 
 .plyr__control.plyr__tab-focus {
-    box-shadow: 0 0 0 5px #ffc107;
+    box-shadow: 0 0 0 5px #ff0000;
 }
 
 .plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]::before {
-    background: violet;
+    background: #ff0000;
 }
 
 .plyr__menu__container .plyr__control[role=menuitemradio]:hover::before {
-    background: violet;
+    background: #ff0000;
+}
+
+.plyr__control--overlaid .plyr__icon--pressed {
+    color: #ff0000;
+}
+
+.plyr__control--overlaid:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.plyr--full-ui .plyr__control--pressed,
+.plyr--full-ui .plyr__control--pressed:hover,
+.plyr--full-ui .plyr__control.plyr__tab-focus {
+    background: #ff0000;
+}
+
+/* Additional YouTube-like styling */
+.plyr--full-ui .plyr__control.plyr__tab-focus {
+    box-shadow: 0 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.plyr__control--overlaid {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.plyr--video .plyr__control:hover {
+    background: rgba(255, 0, 0, 0.8);
+}
+
+.plyr--video .plyr__control[aria-expanded=true] {
+    background: rgba(255, 0, 0, 0.9);
+}
+
+.plyr__control.plyr__tab-focus {
+    box-shadow: 0 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]::before {
+    background: rgba(255, 0, 0, 0.8);
+}
+
+.plyr__menu__container .plyr__control[role=menuitemradio]:hover::before {
+    background: rgba(255, 0, 0, 0.8);
+}
+
+.plyr__control--overlaid .plyr__icon--pressed {
+    color: rgba(255, 0, 0, 0.9);
+}
+
+.plyr__control--overlaid:hover {
+    background: rgba(0, 0, 0, 0.5);
 }
