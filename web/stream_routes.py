@@ -20,7 +20,7 @@ async def root_route_handler(request):
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Futuristic Webpage</title>
+        <title>WELCOME TO H4X FILES ZONE</title>
         <style>
             body {
                 background-color: #0d0d0d;
@@ -70,11 +70,11 @@ async def root_route_handler(request):
         </style>
     </head>
     <body>
-        <h1>Welcome User to the H4X Stream</h1>
-        <p>Use the bot to stream the movie and this bot is created by @MR_H4X</p>
+        <h1>Welcome User to the H4X Stream BOT @h4xmoviebot</h1>
+        <p>Use the bot to stream and download the movie, this bot is created by @MR_H4X</p>
         <div class="buttons">
-            <button class="button" onclick="window.location.href='https://t.me/HA_Bots';">Telegram Channel</button>
-            <button class="button" onclick="window.location.href='https://github.com/your_github_profile';">GitHub</button>
+            <button class="button" onclick="window.location.href='https://t.me/ARMH4X;">Telegram Channel</button>
+            <button class="button" onclick="window.location.href='https://github.com/muhammedhashirm009';">GitHub</button>
         </div>
     </body>
     </html>
