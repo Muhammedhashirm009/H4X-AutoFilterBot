@@ -14,71 +14,72 @@ routes = web.RouteTableDef()
 
 @routes.get("/", allow_head=True)
 async def root_route_handler(request):
-    return web.Response(text='<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futuristic Webpage</title>
-    <style>
-        body {
-            background-color: #0d0d0d;
-            color: #00ff00;
-            font-family: 'Courier New', Courier, monospace;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
-        }
-        h1 {
-            font-size: 3rem;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-            animation: glow 1.5s infinite alternate;
-        }
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
+    html_content = '''
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Futuristic Webpage</title>
+        <style>
+            body {
+                background-color: #0d0d0d;
+                color: #00ff00;
+                font-family: 'Courier New', Courier, monospace;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                margin: 0;
+                overflow: hidden;
             }
-            to {
-                text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00, 0 0 50px #00ff00;
+            h1 {
+                font-size: 3rem;
+                text-transform: uppercase;
+                margin-bottom: 2rem;
+                animation: glow 1.5s infinite alternate;
             }
-        }
-        .button {
-            background-color: transparent;
-            border: 2px solid #00ff00;
-            color: #00ff00;
-            padding: 10px 20px;
-            margin: 10px;
-            text-transform: uppercase;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .button:hover {
-            background-color: #00ff00;
-            color: #0d0d0d;
-        }
-        .buttons {
-            display: flex;
-            gap: 1rem;
-        }
-    </style>
-</head>
-<body>
-    <h1>Welcome User to the H4X Stream</h1>
-    <p>Use the bot to stream the movie and this bot is created by @MR_H4X</p>
-    <div class="buttons">
-        <button class="button" onclick="window.location.href='https://t.me/ARMH4X';">Telegram Channel</button>
-        <button class="button" onclick="window.location.href='https://github.com/muhammedhashirm009';">GitHub</button>
-    </div>
-</body>
-</html>
-', content_type='text/html')
-
+            @keyframes glow {
+                from {
+                    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
+                }
+                to {
+                    text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00, 0 0 50px #00ff00;
+                }
+            }
+            .button {
+                background-color: transparent;
+                border: 2px solid #00ff00;
+                color: #00ff00;
+                padding: 10px 20px;
+                margin: 10px;
+                text-transform: uppercase;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            .button:hover {
+                background-color: #00ff00;
+                color: #0d0d0d;
+            }
+            .buttons {
+                display: flex;
+                gap: 1rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Welcome User to the H4X Stream</h1>
+        <p>Use the bot to stream the movie and this bot is created by @MR_H4X</p>
+        <div class="buttons">
+            <button class="button" onclick="window.location.href='https://t.me/HA_Bots';">Telegram Channel</button>
+            <button class="button" onclick="window.location.href='https://github.com/your_github_profile';">GitHub</button>
+        </div>
+    </body>
+    </html>
+    '''
+    return web.Response(text=html_content, content_type='text/html')
 
 @routes.get("/watch/{message_id}")
 async def watch_handler(request):
@@ -141,3 +142,9 @@ async def media_download(request, message_id: int):
         return_resp.headers.add("Content-Length", str(file_size))
 
     return return_resp
+
+app = web.Application()
+app.add_routes(routes)
+
+if __name__ == '__main__':
+    web.run_app(app)
