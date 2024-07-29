@@ -9,72 +9,49 @@
     <link rel="stylesheet" type='text/css' href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Delius">
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.9/plyr.css" />
-
-
-<style>
-      marquee{
-      font-size: 30px;
-      font-weight: 800;
-      color: Blue;
-      font-family: sans-serif;
-      }
-    </style>
-    <style>
-      marquee{
-      font-size: 30px;
-      font-weight: 800;
-      color: Blue;
-      font-family: sans-serif;
-      }
-    </style>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.9/plyr.css">
 </head>
-
 <body>
-	
     <header>
-        <marquee bgcolor="#f7f305"
-<div class="toogle"></div>
-        <div id="file-name">
-            %s
-        </div>
-</marquee>
+        <marquee bgcolor="#f7f305"><div id="file-name">%s</div></marquee>
     </header>
-
     <div class="container">
-        <tag src="%s" class="player"></tag>
+        <video id="player" class="player" playsinline controls>
+            <source src="%s" type="video/mp4">
+            <track kind="captions" label="English captions" src="captions.vtt" srclang="en" default>
+        </video>
     </div>
-
     <footer>
-	    <center><h4>Video not playing? Possibly because your browser or the player doesn't support codec. Please download and watch.</h4></center>
-	    
+        <center>
+            <h4>Video not playing? Possibly because your browser or the player doesn't support codec. Please download and watch.</h4>
+        </center>
     </footer>
     <script src="https://cdn.plyr.io/3.6.9/plyr.js"></script>
-	<script>
-        const controls = [
-              'play-large',
-              'rewind',
-              'play', 
-              'fast-forward', 
-              'progress', 
-              'current-time',
-              'duration',
-              'mute',
-              'volume',
-              'captions',
-              'settings',
-              'pip',
-              'airplay',
-              'download',
-              'fullscreen'
-            ];
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const player = Plyr.setup('.player', { controls });
+            const player = new Plyr('#player', {
+                controls: [
+                    'play-large', 'rewind', 'play', 'fast-forward', 
+                    'progress', 'current-time', 'duration', 
+                    'mute', 'volume', 'captions', 'settings', 
+                    'pip', 'airplay', 'download', 'fullscreen',
+                    'speed', 'quality'
+                ],
+                settings: ['captions', 'quality', 'speed', 'loop'],
+                quality: {
+                    default: 576,
+                    options: [4320, 2880, 2160, 1440, 1080, 720, 576, 480, 360, 240],
+                },
+                speed: {
+                    selected: 1,
+                    options: [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2],
+                },
+                tooltips: {
+                    controls: true,
+                    seek: true
+                }
+            });
         });
-
-        const body = document.querySelector('body');
-        const footer = document.querySelector('footer');
-        const toogle = document.querySelector('.toogle');
     </script>
 </body>
 </html>
